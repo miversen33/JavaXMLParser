@@ -1,4 +1,4 @@
-# JavaXMLParser
+# JavaXMLUtility
 
 A Simple XML Utility Written in Java
 
