@@ -1,4 +1,4 @@
-package XMLParser;
+package XMLUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -20,7 +20,7 @@ import org.xml.sax.helpers.DefaultHandler;
 public final class XMLParser extends DefaultHandler{
 
     private final File xmlFile;
-    private final List<XMLParent> children = new ArrayList<>();
+    private final List<XMLHeader> children = new ArrayList<>();
     private final List<XMLParent> openChildren = new ArrayList<>();
     private final static String LINE_BREAK = "\n";
 
@@ -87,7 +87,7 @@ public final class XMLParser extends DefaultHandler{
 
 
 
-    private final List<XMLParent> getChildren(){
+    private final List<XMLHeader> getChildren(){
         return children;
     }
 
@@ -103,7 +103,7 @@ public final class XMLParser extends DefaultHandler{
         }
     }
 
-    public final static List<XMLParent> Parse(final File file) throws FileNotFoundException, XMLStreamException {
+    public final static List<XMLHeader> Parse(final File file) throws FileNotFoundException, XMLStreamException {
         final XMLParser parser = new XMLParser(file);
         parser.parse();
         return parser.getChildren();
@@ -113,7 +113,7 @@ public final class XMLParser extends DefaultHandler{
      * Use this if you dont plan on handling the exceptions that may arise. You should not trust any
      * file you are putting in however.
      */
-    public final static List<XMLParent> DefaultParse(final File file){
+    public final static List<XMLHeader> DefaultParse(final File file){
         try {
             return Parse(file);
         } catch (FileNotFoundException | XMLStreamException e) {

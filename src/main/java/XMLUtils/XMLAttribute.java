@@ -1,4 +1,4 @@
-package XMLParser;
+package XMLUtils;
 
 public final class XMLAttribute{
     private final String name;

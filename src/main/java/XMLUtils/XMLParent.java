@@ -1,29 +1,32 @@
-package XMLParser;
+package XMLUtils;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 
-public class XMLParent{
+public class XMLParent implements XMLHeader{
     private final String name;
     private String content = null;
-    private final List<XMLParent> children = new ArrayList<XMLParent>();
+    private final List<XMLHeader> children = new ArrayList<>();
     private final Map<String, XMLAttribute> attributes = new HashMap<>();
 
     public XMLParent(final String name){
         this.name = name;
     }
 
+    @Override
     public final String getName(){
         return name;
     }
-    
+
+    @Override
     public final String getContent(){
         return content;
     }
 
-    public final List<XMLParent> getChildren(){
+    @Override
+    public List<XMLHeader> getChildren() {
         return children;
     }
 
@@ -31,6 +34,7 @@ public class XMLParent{
         return attributes.get(attribute);
     }
 
+    @Override
     public final List<XMLAttribute> getAttributes(){
         final List<XMLAttribute> attrs = new ArrayList<>();
         for(final String key : attributes.keySet()){
