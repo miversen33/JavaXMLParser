@@ -1,5 +1,3 @@
-# JavaXMLUtility
-
 A Simple XML Utility Written in Java
 
 Using this is simple enough. See below.
