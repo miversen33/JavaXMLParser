@@ -2,6 +2,9 @@ A Simple XML Parser Written in Java
 
 Using this is simple enough. See below.
 
+Download the jar, and make it a dependency for your project.
+
+Usage
 * Option 1 (If you feel like handling the exceptions yourself)
 ```java
 File inputFile = new File("Insert Your File Location Here");
