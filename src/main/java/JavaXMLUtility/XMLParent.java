@@ -1,14 +1,12 @@
 package JavaXMLUtility;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.HashMap;
+import java.util.*;
 
 public class XMLParent implements XMLHeader{
     private final String name;
     private String content = null;
     private final List<XMLHeader> children = new ArrayList<>();
+    private final Set<String> childrenTitles = new HashSet<>();
     private final Map<String, XMLAttribute> attributes = new HashMap<>();
 
     public XMLParent(final String name){
@@ -52,11 +50,12 @@ public class XMLParent implements XMLHeader{
 
     @Override
     public final boolean containsChild(final String child){
-        return children.contains(child);
+        return childrenTitles.contains(child);
     }
 
     protected final void addChild(final XMLParent child){
         children.add(child);
+        childrenTitles.add(child.name);
     }
 
     protected final void addAttribute(final String attributeName, final String attribute){
