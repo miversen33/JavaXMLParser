@@ -36,6 +36,11 @@ public class XMLParent implements XMLHeader {
     }
 
     @Override
+    public final boolean containsAttribute(final String attribute){
+        return attributes.containsKey(attribute);
+    }
+
+    @Override
     public final List<XMLAttribute> getAttributes(){
         final List<XMLAttribute> attrs = new ArrayList<>();
         for(final String key : attributes.keySet()){
