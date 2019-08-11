@@ -1,4 +1,4 @@
-package XMLUtils;
+package JavaXMLUtility;
 
 import java.io.File;
 import java.io.FileNotFoundException;

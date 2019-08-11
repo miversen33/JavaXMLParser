@@ -1,4 +1,4 @@
-package XMLUtils;
+package JavaXMLUtility;
 
 public interface XMLStrings {
     String LINE_BREAK = "\n";

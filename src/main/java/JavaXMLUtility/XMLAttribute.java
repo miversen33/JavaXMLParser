@@ -1,4 +1,4 @@
-package XMLUtils;
+package JavaXMLUtility;
 
 public final class XMLAttribute{
     private final String name;

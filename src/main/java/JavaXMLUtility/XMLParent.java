@@ -1,11 +1,11 @@
-package XMLUtils;
+package JavaXMLUtility;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 
-public class XMLParent implements XMLHeader{
+public class XMLParent implements XMLHeader {
     private final String name;
     private String content = null;
     private final List<XMLHeader> children = new ArrayList<>();
@@ -30,6 +30,7 @@ public class XMLParent implements XMLHeader{
         return children;
     }
 
+    @Override
     public final XMLAttribute getAttribute(final String attribute){
         return attributes.get(attribute);
     }
