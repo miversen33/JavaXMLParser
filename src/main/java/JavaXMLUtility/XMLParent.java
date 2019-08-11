@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 
-public class XMLParent implements XMLHeader {
+public class XMLParent implements XMLHeader{
     private final String name;
     private String content = null;
     private final List<XMLHeader> children = new ArrayList<>();
@@ -64,5 +64,11 @@ public class XMLParent implements XMLHeader {
 
     protected final void setContent(final String content){
         this.content = content;
+    }
+
+    @Override
+    public final boolean equals(final Object o){
+        if(o instanceof String) return name.equals(o);
+        return super.equals(o);
     }
 }
