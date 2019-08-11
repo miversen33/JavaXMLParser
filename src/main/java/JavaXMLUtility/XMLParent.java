@@ -50,6 +50,11 @@ public class XMLParent implements XMLHeader{
         return attrs;
     }
 
+    @Override
+    public final boolean containsChild(final String child){
+        return children.contains(child);
+    }
+
     protected final void addChild(final XMLParent child){
         children.add(child);
     }

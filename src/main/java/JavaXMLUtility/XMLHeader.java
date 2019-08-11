@@ -8,5 +8,6 @@ public interface XMLHeader {
     List<XMLAttribute> getAttributes();
     XMLAttribute getAttribute(final String attribute);
     boolean containsAttribute(final String attribute);
+    boolean containsChild(final String child);
     List<XMLHeader> getChildren();
 }
